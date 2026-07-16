@@ -1,6 +1,6 @@
-# shumys-kz-backend
+# zhumys-kz-backend
 
-Минималистичный REST API для маркетплейса работы shumys.kz. Собран на **Hono**, **Drizzle ORM** и **PostgreSQL**. Текущий объём: регистрация и вход (аутентификация).
+Минималистичный REST API для маркетплейса работы zhumys.kz. Собран на **Hono**, **Drizzle ORM** и **PostgreSQL**. Текущий объём: регистрация и вход (аутентификация).
 
 ## Стек
 
@@ -33,7 +33,7 @@ docker compose down             # остановить (данные сохра�
 
 ```env
 PORT=3000
-DATABASE_URL=postgres://shumys:shumys@localhost:5433/shumys
+DATABASE_URL=postgres://zhumys:zhumys@localhost:5433/zhumys
 JWT_SECRET=поменяйте-на-случайную-строку
 CORS_ORIGIN=http://localhost:5173
 ```
@@ -84,12 +84,12 @@ pnpm db:studio          # поднимается на https://local.drizzle.stud
 **psql** — прямо в контейнере:
 
 ```bash
-docker compose exec db psql -U shumys -d shumys
+docker compose exec db psql -U zhumys -d zhumys
 # \dt  список таблиц   \d users  структура   SELECT * FROM users;   \q  выход
 ```
 
 **Любой GUI-клиент** (DBeaver, TablePlus, pgAdmin): host `localhost`, port `5433`,
-база/пользователь/пароль — везде `shumys`.
+база/пользователь/пароль — везде `zhumys`.
 
 ## Скрипты
 
