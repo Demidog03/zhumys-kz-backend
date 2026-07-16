@@ -5,7 +5,7 @@ info:
 
 http:
   method: POST
-  url: https://zhumys-kz-backend-production.up.railway.app/auth/login
+  url: "{{BASE_URL}}/auth/login"
   body:
     type: json
     data: |-

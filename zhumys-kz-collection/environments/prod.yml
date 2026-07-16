@@ -1,0 +1,4 @@
+name: prod
+variables:
+  - name: BASE_URL
+    value: https://zhumys-kz-backend-production.up.railway.app
