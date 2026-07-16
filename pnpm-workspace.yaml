@@ -1,0 +1,4 @@
+# Allow esbuild's install script to run (used by tsx / drizzle-kit).
+# Without this, pnpm's build-script gate aborts install in CI/Docker.
+allowBuilds:
+  esbuild: true
