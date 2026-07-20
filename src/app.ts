@@ -3,7 +3,7 @@ import { cors } from 'hono/cors'
 import { logger } from 'hono/logger'
 import { HTTPException } from 'hono/http-exception'
 import { env } from './env'
-import { authRoutes } from './modules/auth/auth.routes'
+import { authRoutes, meRoutes } from './modules/auth/auth.routes'
 
 export const app = new Hono()
 
@@ -13,6 +13,7 @@ app.use('*', cors({ origin: env.CORS_ORIGIN, credentials: true }))
 app.get('/health', (c) => c.json({ status: 'ok' }))
 
 app.route('/auth', authRoutes)
+app.route('/', meRoutes)
 
 app.notFound((c) => c.json({ error: 'Not found' }, 404))
 

@@ -37,3 +37,15 @@ export async function login(input: LoginInput): Promise<AuthResult> {
 
   return { user: toPublicUser(user), token: await signToken(user) }
 }
+
+export async function getMe(userId: string): Promise<PublicUser> {
+  const user = await db.query.users.findFirst({
+    where: eq(users.id, userId),
+  })
+
+  if (!user) {
+    throw new HTTPException(404, { message: 'User not found' })
+  }
+
+  return toPublicUser(user)
+}
